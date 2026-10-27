@@ -1,0 +1,5 @@
+﻿order_id,customer_email,amount
+A-001,alice@example.com,19.90
+A-001,alice@example.com,19.90
+A-002,,12.50
+A-003,bob@example.com,7.00
