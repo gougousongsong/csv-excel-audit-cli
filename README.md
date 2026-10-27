@@ -31,3 +31,21 @@ This demo does not provide PDF OCR, macros/VBA, pivot tables, database access, c
 - Full toolkit: https://2477537799006.gumroad.com/l/csv-excel-cleaning-audit-toolkit?utm_source=github_demo&utm_medium=repository&utm_campaign=csv_audit
 
 AI-assisted delivery is disclosed.
+## Kuaishou metadata integration example
+
+The related [Kuaishou Video Metadata Lookup Actor](https://apify.com/gougousongsong/kuaishou-video-detail) turns one Kuaishou search-result video object into one normalized record for indexing, monitoring, or analytics. Its current public pricing is pay-per-event: `$0.002` per metadata result plus the configured start event.
+
+Input shape:
+
+```json
+{"video": {"photoId": "example-photo-id", "caption": "Example caption", "authorName": "Example creator", "likeCount": 123, "commentCount": 7, "shareCount": 4, "timestamp": "2026-01-01T00:00:00Z", "durationSeconds": 18, "source": "kuaishou-search"}}
+```
+
+Observed output from a completed Actor dataset run:
+
+```json
+{"video_id": "5258515723732898742", "caption": "sample", "user_id": "", "user_name": "", "kwai_id": "", "view_count": 12, "like_count": 3, "comment_count": 1, "share_count": 0, "collect_count": 0, "published_timestamp": 0, "duration_ms": 0, "item_type": "", "source": "kuaishou-search-collector", "normalized_at": "2026-09-07T17:37:52Z"}
+```
+
+This is a metadata normalizer, not a video downloader, OCR system, sentiment model, or historical archive. It accepts one search-result JSON object per run and returns one normalized metadata item.
+
